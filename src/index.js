@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import NwStatTable from './nwStatTable'
-import './styles/tableStyle.css'
-ReactDOM.render(< NwStatTable />, document.getElementById('root'));
+import HomeScreen from './homeScreen'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+ReactDOM.render(<HomeScreen/>, document.getElementById('root'));
