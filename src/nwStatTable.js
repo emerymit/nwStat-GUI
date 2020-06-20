@@ -24,8 +24,8 @@ function NwStatTable() {
 
         return(
             <div>
-                <h1 id='title'>Network Stats: 5155</h1>
-                <h2 id='testCount'>Tests Run: {nwStats.length}</h2> 
+                <h2 id='title'>Raw Test Results</h2>
+                <h4 id='testCount'>Tests Run: {nwStats.length}</h4> 
                 <table id='masterstats'>
                     <tbody>
                         <tr>
