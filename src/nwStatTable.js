@@ -6,7 +6,7 @@ function NwStatTable() {
         const [isLoading, setIsLoading] = useState(true)
 
         useEffect(() => {
-            fetch('http://192.168.1.244:3001')
+            fetch('http://192.168.1.244:3001/GetAll')
               .then(response => {
                 return response.json();
               })

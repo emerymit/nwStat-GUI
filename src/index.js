@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import HomeScreen from './homeScreen'
+import App from './app'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-ReactDOM.render(<HomeScreen/>, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter> <App/> </BrowserRouter> , document.getElementById('root'));
