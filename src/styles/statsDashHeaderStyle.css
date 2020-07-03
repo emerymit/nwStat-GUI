@@ -1,0 +1,36 @@
+
+  #AvgVtFourTable {
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 3px solid #ddd;
+    width: 100%;
+  }
+  
+  #AvgVtFourTable td, #students th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  #AvgVtFourTable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #AvgVtFourTable tr:hover {background-color: #ddd;}
+  
+  #AvgVtFourTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #b15a09;
+    color: white;
+  }
+
+    #rowCap{
+        color: white;
+        font-size: large;
+        background-color: #b15a09;
+        border-color: #b15a09;
+        column-width: 15%;
+    
+    }

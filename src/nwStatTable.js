@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 
 
 function NwStatTable() {
+        require('react-dom');
+        window.React2 = require('react');
+        console.log(window.React1 === window.React2);
         const [nwStats, setNwStats] = useState([]);
         const [isLoading, setIsLoading] = useState(true)
 
