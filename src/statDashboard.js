@@ -14,6 +14,43 @@ function StatDashboard(){
         speed = speed / 1000000
         return speed
     }
+    //func comp for the colored down label
+    const TFourAvgDown = (atDwn, tfDwn) => {
+        if(atDwn < tfDwn){
+            return(
+                <td style={{color:'green'}}>{tfDwn} (+{(tfDwn/atDwn).toFixed(2)}%) </td>
+            );
+        }else{
+            return(
+                <td style={{color:'red'}}>{tfDwn} (-{(atDwn/tfDwn).toFixed(2)}%) </td>
+            );
+        }
+    }
+    //func comp for the colored up label 
+    const TFourAvgUp = (atUp, tfUp) => {
+        if(atUp < tfUp){
+            return(
+                <td style={{color:'green'}}>{tfUp} (+{(tfUp/atUp).toFixed(2)}%)  </td>
+            );
+        }else{
+            return(
+                <td style={{color:'red'}}>{tfUp} (-{(atUp/tfUp).toFixed(2)}%) </td>
+            );
+        }
+    }
+    //func comp for the colored ping label 
+    const TFourAvgPing = (atPing, tfPing) => {
+        if(atPing > tfPing){
+            return(
+                <td style={{color:'green'}}>{tfPing} (+{(atPing/tfPing).toFixed(2)}%) </td>
+            );
+        }else{
+            return(
+                <td style={{color:'red'}}>{tfPing} (-{(tfPing/atPing).toFixed(2)}%) </td>
+            );
+        }
+    }
+
     //average down all time
     const [avgDown, setAvgDown] = useState(0);
     useEffect(() => {
@@ -102,9 +139,6 @@ function StatDashboard(){
             });
     },[]);
 
-
-
-
         return(
         <div>
             {GetNavBar()}
@@ -127,16 +161,14 @@ function StatDashboard(){
 
                     <tr>
                         <td id='rowCap'>Average Over Last 24hrs</td>
-                        <td>{avgTFDown}</td>
-                        <td>{avgTFUp }</td>
-                        <td>{avgTFPing}</td>
+                        {TFourAvgDown(avgDown, avgTFDown)}
+                        {TFourAvgUp(avgUp, avgTFUp)}
+                        {TFourAvgPing(avgPing, avgTFPing)}
                     </tr>
 
                 </tbody>
             </table>
 
-
-            
         </div>
         );
     
