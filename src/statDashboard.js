@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import GetNavBar from './NwNavBar'
+import HistoricalLine from './historicalLine'
+import HistoricalPingLine from './historicalPingLine'
 // import AverageDownLabel from './StatsComponents/AverageDownLabel'
 // import AveragePingLabel from './StatsComponents/AveragePingLabel'
 // import AverageUpLabel from './StatsComponents/AverageUpLabel'
@@ -140,7 +142,7 @@ function StatDashboard(){
     },[]);
 
         return(
-        <div>
+        <div style={{backgroundColor:"#181a1b"}}>
             {GetNavBar()}
 
             <table id='AvgVtFourTable'>
@@ -151,7 +153,7 @@ function StatDashboard(){
                         <th>Up (Mbps)</th>
                         <th>Ping(ms)</th>
                     </tr>
-
+ 
                     <tr>
                         <td id="rowCap">All Time Average </td>
                         <td>{avgDown}</td>
@@ -168,7 +170,8 @@ function StatDashboard(){
 
                 </tbody>
             </table>
-
+            <div id='Chart'><HistoricalLine/></div>
+            <div><HistoricalPingLine/></div>
         </div>
         );
     

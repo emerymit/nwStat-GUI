@@ -8,7 +8,7 @@ class HomeScreen extends React.Component{
         super(props);
     }
     render(){
-        return(<div>
+        return(<div style={{backgroundColor:"#181a1b"}}>
                 <GetNavBar/>
                 <NwStatTable/>
             </div>
