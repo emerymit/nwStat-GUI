@@ -7,6 +7,7 @@ function NwStatTable() {
         console.log(window.React1 === window.React2);
         const [nwStats, setNwStats] = useState([]);
         const [isLoading, setIsLoading] = useState(true)
+        const [nwStatCount, setNwStatCount] = useState(0);
 
         useEffect(() => {
             fetch('http://192.168.1.244:3001/GetAll')
@@ -19,6 +20,17 @@ function NwStatTable() {
                 });
         }, []);
 
+        useEffect(() => {
+            fetch('http://192.168.1.244:3001/GetStatCount')
+              .then(response => {
+                return response.json();
+              })
+                .then(data => {
+                    setNwStatCount(data[0].count)
+                    console.log(nwStatCount)
+                });
+        }, []);
+
         function formatBitsPerSecond(speed){
             speed = speed / 1000000
             return speed
@@ -28,7 +40,7 @@ function NwStatTable() {
         return(
             <div>
                 <h2 id='title'>Raw Test Results</h2>
-                <h4 id='testCount'>Tests Run: {nwStats.length}</h4> 
+                <h4 id='testCount'>Showing Last 7 Days Of Data, 336 rows of {nwStatCount}</h4> 
                 <table id='masterstats'>
                     <tbody>
                         <tr>
